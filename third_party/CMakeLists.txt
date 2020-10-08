@@ -128,6 +128,7 @@ endif()
 add_subdirectory(json11)
 
 # libarchive
+if(NOT USE_SHARED_LIBARCHIVE)
 set(HAVE_WCSCPY 1)
 set(HAVE_WCSLEN 1)
 
@@ -151,6 +152,7 @@ set(WINDOWS_VERSION "WS08" CACHE STRING "Set Windows Vista as the target version
 add_subdirectory(libarchive)
 target_include_directories(archive_static INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/libarchive/libarchive>)
+endif()
 
 # benchmark
 if(ENABLE_BENCHMARKS)

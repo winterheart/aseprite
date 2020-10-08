@@ -787,8 +787,8 @@ target_link_libraries(app-lib
   ${PNG_LIBRARIES}
   ${ZLIB_LIBRARIES}
   libjpeg-turbo
+  ${LibArchive_LIBRARIES}
   json11
-  archive_static
   fmt
   tinyexpr
   qoi)
