@@ -67,6 +67,7 @@ enable_testing()
 option(USE_SHARED_CMARK   "Use your installed copy of cmark" off)
 option(USE_SHARED_CURL    "Use your installed copy of curl" off)
 option(USE_SHARED_GIFLIB  "Use your installed copy of giflib" off)
+option(USE_SHARED_JSON11  "Use your installed copy of json11" off)
 option(USE_SHARED_ZLIB    "Use your installed copy of zlib" off)
 option(USE_SHARED_LIBARCHIVE "Use your installed copy of libarchive" off)
 option(USE_SHARED_LIBPNG  "Use your installed copy of libpng" off)
@@ -334,6 +335,12 @@ include_directories(${GIF_INCLUDE_DIRS})
 
 # libjpeg-turbo
 find_package(JpegTurbo)
+
+if(USE_SHARED_JSON11)
+  find_package(PkgConfig QUIET)
+  pkg_check_modules(JSON11 json11)
+  include_directories(${JSON11_INCLUDE_DIRS})
+endif()
 
 # cmark
 if(USE_SHARED_CMARK)

@@ -125,7 +125,9 @@ if(NOT USE_SHARED_CMARK)
 endif()
 
 # JSON
-add_subdirectory(json11)
+if(NOT USE_SHARED_JSON11)
+  add_subdirectory(json11)
+endif()
 
 # libarchive
 if(NOT USE_SHARED_LIBARCHIVE)
