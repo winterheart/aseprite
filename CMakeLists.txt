@@ -66,6 +66,7 @@ enable_testing()
 
 option(USE_SHARED_CMARK   "Use your installed copy of cmark" off)
 option(USE_SHARED_CURL    "Use your installed copy of curl" off)
+option(USE_SHARED_FMT     "Use your installed copy of libfmt" off)
 option(USE_SHARED_GIFLIB  "Use your installed copy of giflib" off)
 option(USE_SHARED_JSON11  "Use your installed copy of json11" off)
 option(USE_SHARED_ZLIB    "Use your installed copy of zlib" off)
@@ -224,6 +225,10 @@ endif()
 
 if(NOT USE_SHARED_CURL)
   set(CURL_STATICLIB ON BOOL)
+endif()
+
+if(USE_SHARED_FMT)
+  find_package(fmt REQUIRED)
 endif()
 
 # zlib

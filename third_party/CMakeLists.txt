@@ -115,7 +115,9 @@ if(NOT USE_SHARED_HARFBUZZ AND NOT LAF_BACKEND STREQUAL "skia")
 endif()
 
 add_subdirectory(simpleini)
-add_subdirectory(fmt)
+if(NOT USE_SHARED_FMT)
+  add_subdirectory(fmt)
+endif()
 
 # Add cmark without tests
 if(NOT USE_SHARED_CMARK)
