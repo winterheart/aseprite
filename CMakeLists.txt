@@ -282,6 +282,7 @@ add_definitions(-DPNG_NO_MMX_CODE) # Do not use MMX optimizations in PNG code
 if(USE_SHARED_TINYXML)
   find_library(TINYXML_LIBRARY NAMES tinyxml2)
   find_path(TINYXML_INCLUDE_DIR NAMES tinyxml2.h)
+  find_package(tinyxml2 REQUIRED)
 else()
   set(TINYXML_LIBRARY tinyxml2)
   set(TINYXML_INCLUDE_DIR ${TINYXML_DIR})
