@@ -341,7 +341,7 @@ endif()
 include_directories(${GIF_INCLUDE_DIRS})
 
 # libjpeg-turbo
-find_package(JpegTurbo)
+find_package(libjpeg-turbo)
 
 if(USE_SHARED_JSON11)
   find_package(PkgConfig QUIET)

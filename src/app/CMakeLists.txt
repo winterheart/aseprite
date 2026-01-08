@@ -786,7 +786,7 @@ target_link_libraries(app-lib
   ${GIF_LIBRARIES}
   ${PNG_LIBRARIES}
   ${ZLIB_LIBRARIES}
-  libjpeg-turbo
+  libjpeg-turbo::jpeg
   ${LibArchive_LIBRARIES}
   json11
   fmt
