@@ -788,6 +788,7 @@ target_link_libraries(app-lib
   ${ZLIB_LIBRARIES}
   libjpeg-turbo::jpeg
   ${LibArchive_LIBRARIES}
+  ICU::uc
   json11
   fmt
   tinyexpr

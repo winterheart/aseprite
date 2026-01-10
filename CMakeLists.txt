@@ -370,6 +370,8 @@ if(REQUIRE_CURL)
   include_directories(${CURL_INCLUDE_DIRS})
 endif()
 
+find_package(ICU COMPONENTS uc)
+
 # simpleini
 include_directories(${SIMPLEINI_DIR})
 
